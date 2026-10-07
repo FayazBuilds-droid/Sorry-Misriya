@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff4b8b,#6a11cb,#2575fc,#ff758c);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+position:relative;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+text-align:center;
+z-index:10;
+padding:20px;
+}
+
+button{
+padding:18px 40px;
+font-size:24px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+background:white;
+color:#ff0066;
+font-weight:bold;
+box-shadow:0 0 25px rgba(255,255,255,.5);
+transition:.4s;
+animation:pulse 1.5s infinite;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 15px white;}
+50%{box-shadow:0 0 35px white;}
+100%{box-shadow:0 0 15px white;}
+}
+
+.card{
+display:none;
+width:min(90%,650px);
+padding:35px;
+border-radius:25px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(20px);
+color:white;
+box-shadow:0 0 40px rgba(255,255,255,.25);
+animation:zoom .8s ease;
+}
+
+@keyframes zoom{
+from{
+transform:scale(.4);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.card h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.card p{
+font-size:20px;
+line-height:1.8;
+}
+
+.heart{
+font-size:45px;
+animation:heart 1s infinite;
+display:block;
+margin-bottom:20px;
+}
+
+@keyframes heart{
+50%{
+transform:scale(1.3);
+}
+}
+
+.sorry{
+position:absolute;
+color:rgba(255,255,255,.18);
+font-size:22px;
+font-weight:bold;
+animation:float linear infinite;
+user-select:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) rotate(0deg);
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+}
+}
+
+@media(max-width:600px){
+
+button{
+font-size:20px;
+padding:16px 30px;
+}
+
+.card h1{
+font-size:30px;
+}
+
+.card p{
+font-size:17px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<button id="btn">
+ 😔 Misriya Please Click Me 😒
+</button>
+
+<div class="card" id="card">
+
+<span class="heart">❤️</span>
+
+<h1>I'm Really Sorry 😔</h1>
+
+<p>
+
+Sorry... 😔❤️<br><br>
+
+I’m the one who should be saying this…<br>
+I understand everything you’re saying.<br><br>
+
+Please forgive me. 🌹<br><br>
+
+നിന്നെ വിഷമിപ്പിക്കാനോ വേദനിപ്പിക്കാനോ ഞാൻ ഒരിക്കലും ആഗ്രഹിച്ചിട്ടില്ല.<br>
+
+
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("btn").onclick=function(){
+
+this.style.display="none";
+document.getElementById("card").style.display="block";
+
+}
+
+for(let i=0;i<80;i++){
+
+let s=document.createElement("div");
+s.className="sorry";
+s.innerText="SORRY ❤️";
+
+s.style.left=Math.random()*100+"vw";
+s.style.animationDuration=(6+Math.random()*8)+"s";
+s.style.animationDelay=Math.random()*8+"s";
+s.style.fontSize=(15+Math.random()*18)+"px";
+
+document.body.appendChild(s);
+
+}
+
+</script>
+
+</body>
+</html>
